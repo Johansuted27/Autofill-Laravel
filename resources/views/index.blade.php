@@ -86,6 +86,17 @@
             -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
             box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
         }
+        .form-custom-label>#first_field{
+            position: absolute;
+            cursor: text;
+            font-size: 15px;
+            color: #6e6e6e;
+            line-height: 1;
+            padding: 0 1px;
+            top: 14px;
+            left: 10px;
+            z-index: 2;
+        }
     </style>
 
     <title>Mustika Ratu</title>
@@ -104,7 +115,7 @@
                         </div>
                         <h5 class="font-weight-bold mb-1">Form Input</h5>
                         <p class="mb-4">Silahkan isi data dengan benar!</p>
-                        <form action="" method="">
+                        <form action="" method="" id="form">
                             <div class="position-relative mb-4">
                                 <div class="form-group form-custom-label">
                                     <input type="text" name="nama_toko" id="nama_toko" class="form-control">
@@ -136,8 +147,8 @@
                             </div>
                             <div class="position-relative mb-4">
                                 <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Data diatas sudah benar</label>
+                                    <input type="checkbox" class="form-check-input" id="cekData">
+                                    <label class="form-check-label" for="cekData">Data diatas sudah benar</label>
                                 </div>
                             </div>
                             <div class="position-relative">
@@ -159,7 +170,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-
 </script>
 
 </body>
