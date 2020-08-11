@@ -40,6 +40,11 @@
         .form-control:focus {
             border-color: #d87fd0;
         }
+        select.custom-select:focus{
+            border-color: #d87fd0;
+            outline: none;
+            box-shadow: none;
+        }
         .form-custom-label{
             display: block;
             position: relative;
@@ -75,18 +80,24 @@
             background: #c24fb6 !important;
             border: 1px solid #c24fb6 !important;
         }
+        .card#card-form{
+            border: none;
+            -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+            box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+        }
     </style>
 
-    <title>Hello, world!</title>
+    <title>Mustika Ratu</title>
 </head>
 <body class="main">
 
 <section style="height: 100% !important;">
-    <div style="background: url('images/background-img.jpg') 0% 0% / cover; width: 100%; height: 100%; position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>
+{{--    <div style="background: url('images/background-img.jpg') 0% 0% / cover; width: 100%; height: 100%; position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>--}}
     <div class="container" style="height: 100% !important;">
         <div class="h-100 row">
             <div class="mx-auto my-auto col-12 col-md-6 col-lg-6">
-                <div class="card">
+                <div class="card" id="card-form">
                     <div class="card-body p-5">
                         <div class="w-100">
                             <img src="{{url('images/lg-mustika-ratu.png')}}" style="width: 50%;" alt="" class="mb-4 mx-auto d-block">
@@ -113,12 +124,6 @@
                             </div>
                             <div class="position-relative mb-4">
                                 <div class="form-group form-custom-label">
-                                    <input type="text" name="code" id="code" class="form-control" disabled>
-                                    <span>Kode Bank</span>
-                                </div>
-                            </div>
-                            <div class="position-relative mb-4">
-                                <div class="form-group form-custom-label">
                                     <input type="text" name="an_bank" id="an_bank" class="form-control">
                                     <span>No Rekening</span>
                                 </div>
@@ -127,6 +132,12 @@
                                 <div class="form-group form-custom-label">
                                     <input type="text" name="an_bank" id="an_bank" class="form-control">
                                     <span>Atas Nama Bank</span>
+                                </div>
+                            </div>
+                            <div class="position-relative mb-4">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Data diatas sudah benar</label>
                                 </div>
                             </div>
                             <div class="position-relative">
@@ -148,18 +159,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-    $("#nama_bank").change(function() {
-        var id = $(this).val();
-        $.ajax({
-            url: '/infos/' + id,
-            type: 'get',
-            data: {},
-            success: function(data) {
-                $('#code').val(data.info);
-            },
-            error: function(jqXHR, textStatus, errorThrown) {}
-        });
-    });
+
 </script>
 
 </body>
